@@ -15,12 +15,12 @@ import java.util.Map;
 @RequestMapping("/springmvc/v2/members")
 public class SpringMemberControllerV2 {
 
+    private MemberRepository memberRepository = MemberRepository.getInstance();
+
     @RequestMapping("/new-form")
     public ModelAndView process() {
         return new ModelAndView("new-form");
     }
-
-    private MemberRepository memberRepository = MemberRepository.getInstance();
 
     @RequestMapping("/save")
     public ModelAndView save(HttpServletRequest request, HttpServletResponse response) {
